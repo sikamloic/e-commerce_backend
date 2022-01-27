@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
@@ -28,7 +28,6 @@
     "jquery": "^3.6.0",
     "ngx-owl-carousel-o": "^7.0.1",
     "ngx-slick-carousel": "^0.5.1",
-    "node": "^17.4.0",
     "rxjs": "~6.6.0",
     "slick-carousel": "^1.8.1",
     "tslib": "^2.3.0",
