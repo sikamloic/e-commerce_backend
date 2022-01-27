@@ -1,0 +1,15 @@
+<div class="text-gray-600">
+    <div class="flex justify-end items-start">
+        <button class="rounded-full w-8 h-8 pt-px" style="border-width: 2px;" (click)="close()">
+            <mat-icon class="mat-18">close</mat-icon>
+        </button>
+    </div>
+    <div class="text-center mt-5 text-lg text-black font-medium">supprimer une image</div>
+    <div class="my-5">Vouhaitez-vous supprimer cette image de votre galerie ?</div>
+    <div class="flex justify-center mb-2">
+        <div class="flex space-x-5">
+            <div class=""><button class="bg-white text-pink-500 h-10 w-32 rounded-lg border-2 border-pink-500" mat-dialog-close={{id}}>supprimer</button></div>
+            <div class=""><button class="text-white bg-pink-500 h-10 w-32 rounded-lg" mat-dialog-close="close()">annuler</button></div>
+        </div>
+    </div>
+</div>

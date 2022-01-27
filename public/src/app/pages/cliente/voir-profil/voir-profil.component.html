@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="flex justify-center w-screen text-gray-600">
+    <div class="flex flex-col space-y-5 w-6/12 mt-16 mb-5">
+        <div class="relative shadow-2xl rounded-lg">
+            <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center -space-y-5">
+                    <div class="relative -top-10 z-0 border-t-4 border-yellow-500 rounded-t-lg">
+                        <img src="assets/pp.svg" alt="" class="">
+                    </div>
+                    <div class="text-black font-medium">Nadia</div>
+                </div>
+                <div class="grid grid-cols-3 items-center gap-5">
+                    <div class="flex items-center">
+                        <div class="flex items-center">
+                            <img src="assets/position.svg" alt="" class="">
+                        </div>
+                        <div class="">Nantes</div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="" *ngFor="let item of star">
+                            <img src="assets/star.svg" alt="" class="">
+                        </div>
+                    </div>
+                    <div class="bg-yellow-400 w-10 rounded-lg flex justify-center">
+                        <img src="assets/coeur.svg" alt="" class="">
+                    </div>
+                    <div class="">se déplace</div>
+                    <div class="">à domicile</div>
+                    <div class="bg-pink-300 text-pink-500 w-12 h- rounded-lg h-6 text-center">avis</div>
+                </div>
+            </div>
+            <div class="border-t-2 border-pink-500 my-5"></div>
+            <div class="flex justify-center mb-3">
+                <div class="flex items-center space-x-12">
+                    <div class="cursor-pointer" routerLink="/messagerie">
+                        <button class="bg-pink-300 h-8 w-16 flex justify-center rounded-lg"><img src="assets/smsPink.svg" alt="" class=""></button>
+                    </div>
+                    <div class="cursor-pointer">
+                        <button class="bg-pink-500 text-white h-10 w-44 rounded-lg">reserver la prestation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-y-5">
+            <div class="text-black font-medium">Biographie</div>
+            <div class="">Je suis sarah, et je ravie de m’occuper de vous.</div>
+        </div>
+        <div class="space-y-5">
+            <div class="text-black font-medium">Galerie</div>
+            <div class="">
+                <ngx-slick-carousel
+                    #slickModal="slick-carousel" 
+                    [config]="slideConfig"
+                >
+                    <div ngxSlickItem class="m-2" *ngFor="let slide of slides">
+                        <div class=""><img src="assets/image2.svg" alt="" class=""></div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+        </div>
+        <div class="space-y-5">
+            <div class="text-black font-medium">Autres prestations</div>
+            <div class="space-y-5">
+                <div class="flex items-center w-96 space-x-5" *ngFor="let item of slides">
+                    <div class="border-2 h-10 w-full pr-5 rounded-lg flex items-center">
+                        <div class="bg-yellow-500 w-3 h-full rounded-l-lg mr-2"></div>
+                        <div class="text-pink-500 uppercase">nattes</div>
+                        <div class="flex justify-end">
+                            <div class="bg-yellow-500 bg-opacity-40 rounded-lg p-1">40 €</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

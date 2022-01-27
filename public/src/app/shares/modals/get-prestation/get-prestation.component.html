@@ -1,0 +1,30 @@
+<div class="rounded-lg space-y-5">
+    <div class="flex justify-between px-2">
+        <div class=""></div>
+        <div class="">Choisis ta prestation</div>
+        <div class="rounded-full border-2 w-8 h-8 px-px">
+            <mat-icon class="mat-18" (click)="close()">close</mat-icon>
+        </div>
+    </div>
+    <div class="" *ngFor="let item of items">
+        <div class="border-2 rounded-md cursor-pointer flex justify-between items-center h-12 p-2 w-80" (click)="showSubMenu(item)">
+            <div class="flex space-x-3 items-center">
+                <div class=""><img src="assets/outils.svg" alt="" class=""></div>
+                <div class="uppercase">{{item.nom}}</div>
+            </div>
+            <div class=""><img [src]="item.check ? 'assets/checked.svg':'assets/check.svg'" alt="" class=""></div>
+        </div>
+        <div class="" *ngIf="item.check">
+            <div class="rounded-md cursor-pointer flex justify-between items-center h-10 px-2 w-80 bg-gray-600 bg-opacity-40 space-y-2 mt-2" *ngFor="let sub of item.sub" (click)="getValue(sub)">
+                <div class="">{{sub.nom}}</div>
+                <div class="flex space-x-2 pb-2">
+                    <img src="assets/lineVertical.svg" alt="" class="h-10">
+                    <img [src]="sub.check ? 'assets/subChecked.svg':'assets/subCheck.svg'" alt="" class="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <button class="h-10 w-32 uppercase rounded-lg bg-pink-500 text-white" mat-dialog-close={{value}}>valider</button>
+    </div>
+</div>

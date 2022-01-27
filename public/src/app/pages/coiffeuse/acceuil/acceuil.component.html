@@ -1,0 +1,202 @@
+<app-header></app-header>
+<div class="text-gray-600">
+    <div class="flex flex-col items-center md:relative md:flex-row justify-between md:px-10">
+        <div class="relative">
+            <div>
+                <img src="assets/bgImgCoiffeuse.svg" alt="" class="">
+            </div>
+            <div class="text-pink-500 text-2xl text-center absolute bottom-0 md:bottom-5 md:left-44">Avec Bigoodee, je gagne de l’argent et je coiffe selon mes disponibilités.</div>
+        </div>
+        <div class="bg-pink-500 w-80 md:w-96 px-5 py-2 mb-7">
+            <form [formGroup]="registerForm" (ngSubmit)="signUp()">
+                <div class="space-y-5 form">
+                    <mat-error class="text-red-900">
+                        <p>{{message}}</p>
+                    </mat-error>
+                    <div class="h-14 w-full border-2 border-pink-500 rounded-md bg-white flex items-center px-2 cursor-pointer">
+                        <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/villePink.svg" alt="" class=""></mat-icon>
+                        <input matInput type="text" [disabled]="true" placeholder="Ville" class="h-full w-full bg-white outline-none" formControlName="ville">
+                        <mat-icon matSuffix class="mat-18 text-pink-500">keyboard_arrow_down</mat-icon>
+                    </div>
+                    <div class="h-14 w-full border-2 border-pink-500 rounded-md bg-white flex items-center px-2">
+                        <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/emailPink.svg" alt="" class=""></mat-icon>
+                        <input matInput type="email"  placeholder="Email" class="h-full w-full bg-white outline-none" formControlName="email">
+                    </div>
+                    <mat-error class="text-red-900" *ngIf="registerForm.get('email')?.errors?.['email']">
+                        <p>Format invalid</p>
+                    </mat-error>
+                    <div class="h-14 w-full border-2 border-pink-500 rounded-md bg-white flex items-center px-2">
+                        <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/telPink.svg" alt="" class=""></mat-icon>
+                        <input matInput type="tel"  placeholder="Téléphone" class="h-full w-full bg-white outline-none" formControlName="tel">
+                    </div>
+                    <div class="h-14 w-full border-2 border-pink-500 rounded-md bg-white flex items-center px-2">
+                        <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/contactPink.svg" alt="" class=""></mat-icon>
+                        <input matInput type="text"  placeholder="Nom" class="h-full w-full bg-white outline-none" formControlName="nom">
+                    </div>
+                    <div class="h-14 w-full border-2 border-pink-500 rounded-md bg-white flex items-center px-2">
+                        <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/contactPink.svg" alt="" class=""></mat-icon>
+                        <input matInput type="text"  placeholder="Prénom" class="h-full w-full bg-white outline-none" formControlName="prenom">
+                    </div>
+                    <div class="h-14 w-full border-2 border-pink-500 rounded-md bg-white flex items-center px-2">
+                        <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/eyePink.svg" alt="" class=""></mat-icon>
+                        <input matInput type="password"  placeholder="Mot de passe" class="h-full w-full bg-white outline-none" formControlName="pwd">
+                    </div>
+                    <mat-error class="text-red-900" *ngIf="registerForm.get('pwd')?.errors?.['minlength']">
+                        <p>Entrer au minimum 6 caracteres</p>
+                    </mat-error>
+                    <mat-error class="text-red-900" *ngIf="!registerForm.valid && registerForm.touched">
+                        <p>Veuillez remplir correctement les champs</p>
+                    </mat-error>
+                </div>
+                <div class="flex justify-center mt-10">
+                    <button type="submit" class="bg-white text-pink-500 uppercase h-10 w-44 rounded-lg">s'inscrire</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="border-t-8 border-pink-500 mb-10"></div>
+    <div class="flex flex-col items-center space-y-5 relative mt-10">
+        <div class="font-medium text-pink-500 text-lg">Comment rejoindre Bigoodee ?</div>
+        <div class="hidden md:block relative top-11 z-0 px-24 opacity-30">
+            <img src="assets/linePink.svg" alt="" class="">
+        </div>
+        <div class="flex flex-col items-center space-y-5 md:space-y-0 md:items-start md:flex-row justify-center md:px-32 md:space-x-20 md:relative">
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/1.svg" alt="" class="">
+                </div>
+                <div class="text-center">
+                    <div class="">Inscris toi sur le formulaire, en renseignant ta</div>
+                    <div class="">ville, ton email, ton téléphone pourque l’on</div>
+                    <div class="">puisse te recontacter. si ton profil</div>
+                    <div class="">correspond à nos critères (nous allons</div>
+                    <div class="">essentiellement nous baser sur tes photos</div>
+                    <div class="">de coiffures), nous te recontacterons.</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5 md:pr-20">
+                <div class="">
+                    <img src="assets/2.svg" alt="" class="">
+                </div>
+                <div class="text-center">
+                    <div class="">nous te contacterons pour un entretien téléphonique</div>
+                    <div class="">et pour en savoir plus sur tes </div>
+                    <div class="">types de prestations, disponibilités...</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/3.svg" alt="" class="">
+                </div>
+                <div class="text-center">  
+                    <div>Nous t’invitons à une cession</div>
+                    <div>de tests afin d’évaluer tes</div>
+                    <div>compétences.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-t-8 border-pink-500 my-10"></div>
+    <div class="flex flex-col items-center space-y-5">
+        <div class="font-medium text-pink-500 text-lg">Pourquoi rejoindre Bigoodee ?</div>
+        <div class="flex flex-col items-center md:flex-row justify-center md:px-32 md:space-x-44 md:items-start">
+            <div class="flex flex-col items-center space-y-5">
+                <div class="flex flex-col items-center space-y-2">
+                    <div class=""><img src="assets/gagnerArgent.svg" alt="" class=""></div>
+                    <div class="text-pink-500 font-medium">Gagnez de l'argent</div>
+                </div>
+                <div class="text-black text-center">
+                    <div class="">Que je coiffe à temps plein ou </div>
+                    <div class="">occasionnellement,BIGOODEE me</div>
+                    <div class="">met en relation avec de nombreuses</div>
+                    <div class="">utilisatricesà la recherche d’une</div>
+                    <div class="">coiffeuse proche de chez elle.</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5">
+                <div class="flex flex-col items-center space-y-2">
+                    <div class=""><img src="assets/disponibilitePink.svg" alt="" class=""></div>
+                    <div class="text-pink-500 font-medium">Coiffez selon vos disponibilités</div>
+                </div>
+                <div class="text-black text-center">
+                    <div class="">Je gère depuis mon profil </div>
+                    <div class="">mes rendez-vous, ma caisse,</div>
+                    <div class="">ma galerie de photos de mes</div>
+                    <div class="">prestations.je coiffe selon mes </div>
+                    <div class="">disponibilités en  définissant à</div>
+                    <div class="">l’avance mon planning.</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5">
+                <div class="flex flex-col items-center space-y-2">
+                    <div class=""><img src="assets/remuneration.svg" alt="" class=""></div>
+                    <div class="text-pink-500 font-medium">Rémuneration sécurisée</div>
+                </div>
+                <div class="text-black text-center">
+                    <div class="">Tu fixes tes tarifs à l’avance,</div>
+                    <div class="">ceux-ci ne change pas et te</div>
+                    <div class="">sont réservés en intégrité.</div>
+                    <div class="">un service client est disponible 7j/7.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-t-8 border-pink-500 my-10"></div>
+    <div class="flex flex-col items-center space-y-5 relative mt-10">
+        <div class="font-medium text-pink-500 text-lg">Comment rejoindre Bigoodee ?</div>
+        <div class="hidden md:block relative top-11 z-0 px-24 opacity-30">
+            <img src="assets/linePink.svg" alt="" class="">
+        </div>
+        <div class="flex flex-col items-center space-y-5 md:space-y-0 md:items-start md:flex-row justify-center md:px-32 md:space-x-32 md:relative">
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/1.svg" alt="" class="">
+                </div>
+                <div class="text-center">
+                    <div class="">L’utilisatrice indique la date, l’heure et le</div>
+                    <div class="">type de coiffure qu’elle souhaite. Valide sa</div>
+                    <div class="">réservation en procédant au règlement sur</div>
+                    <div class="">l’application.</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/2.svg" alt="" class="">
+                </div>
+                <div class="text-center">
+                    <div class="">Je reçois ensuite une notification,</div>
+                    <div class="">directement sur mon mobile, quand une</div>
+                    <div class="">demande correspond à mes critères.</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/3.svg" alt="" class="">
+                </div>
+                <div class="text-center">
+                    <div>Si je confirme le rendez-vous, je vais</div>
+                    <div>pouvoir échanger avec la cliente, sur ces</div>
+                    <div>besoins précis et autres détails avant le</div>
+                    <div>jour de la prestation.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-t-8 border-pink-500 my-10"></div>
+    <div class="flex justify-between md:px-32 w-full items-center">
+        <div class="">
+            <img src="assets/bigoodeeCoiffeuse.svg" alt="">
+        </div>
+        <div class="space-y-5 flex flex-col items-center w-72">
+            <div class="text-pink-500 text-2xl">
+                <div>télechargez dès à present</div>
+                <div>notre appication mobile</div>
+            </div>
+            <div class="flex justify-between w-full space-x-5">
+                <div class=""><img src="assets/appstore.svg" alt="" class=""></div>
+                <div class=""><img src="assets/playstore.svg" alt="" class=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

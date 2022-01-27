@@ -1,0 +1,18 @@
+<div class="flex flex-col items-center">
+    <div class="">Choix de la date</div>
+    <div class="flex space-x-10">
+        <div class="">
+            <mat-calendar [(selected)]="selected" #picker [headerComponent]="calendar" color="primary"></mat-calendar>
+        </div>
+        <div class="border-r-2"></div>
+        <div class="flex flex-col items-center space-y-8">
+            <div class="">choisis ta plage horaire</div>
+            <div class="grid grid-cols-2 gap-5">
+                <div class="bg-gray-600 bg-opacity-20 p-1 cursor-pointer font-medium" [ngClass]="item.select ? 'text-pink-500 bg-pink-500 bg-opacity-20':''" *ngFor="let item of items; let i = index" (click)="change(items, i)">{{item.title}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <button class="w-44 bg-pink-500 text-white uppercase h-10 rounded-lg" mat-dialog-close={{planning(selected,value)}}>valider</button>
+    </div>
+</div>

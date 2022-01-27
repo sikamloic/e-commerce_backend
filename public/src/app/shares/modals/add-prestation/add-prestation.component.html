@@ -1,0 +1,26 @@
+<div class="text-gray-600 rounded-lg">
+    <div class="flex justify-end">
+        <div class="border-2 rounded-full p-px w-8 h-8" (click)="close()">
+            <mat-icon class="mat-18">close</mat-icon>
+        </div>
+    </div>
+    <div class="flex flex-col items-center space-y-5">
+        <div class="text-black text-xl">Ajouter des prestations</div>
+        <div class="">Selectionnez une prestation et ajoutez le tarif que vous souhaitez proposer.</div>
+        <div class="">
+            <form action="" class="flex flex-col items-center" [formGroup]="registerForm" (ngSubmit)="register()">
+                <mat-form-field class="cursor-pointer w-72 md:w-96" appearance="outline" (click)="openModal()">
+                    <mat-label>Prestation</mat-label>
+                    <input [disabled]="true" matInput type="" [(ngModel)]="value" formControlName="prestation">
+                </mat-form-field>
+                <mat-form-field class="w-72 md:w-96" appearance="outline">
+                    <mat-label>Tarif</mat-label>
+                    <input matInput type="number" formControlName="tarif">
+                </mat-form-field>
+                <div class="">
+                    <button type="submit" class="text-white bg-pink-500 uppercase rounded-lg h-10 w-32">valider</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

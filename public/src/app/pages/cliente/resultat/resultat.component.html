@@ -1,0 +1,82 @@
+<app-header></app-header>
+<div class="flex justify-center my-5">
+    <div class="flex flex-col space-y-5 md:flex-row items-center space-x-10 text-gray-600">
+        <div class="">
+            <form action="" class="flex flex-col items-center border-2 p-2 rounded-lg">
+                <div class="flex flex-col">
+                    <mat-form-field appearance="outline" class="w-full px-3 cursor-pointer" color="primary" (click)="openVille()">
+                        <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/position.svg" alt="" class=""></mat-icon>
+                        <mat-label>Choix de la ville</mat-label>
+                        <input matInput type="text" disabled="disabled" value={{ville}} placeholder="Placeholder">
+                        <mat-icon class="text-pink-500" matSuffix>keyboard_arrow_down</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-full px-3 cursor-pointer" color="primary" (click)="openPrestation()">
+                        <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/outils.svg" alt="" class=""></mat-icon>
+                        <mat-label>Type de prestation</mat-label>
+                        <input matInput type="text" disabled="disabled" value={{prestation}} placeholder="Placeholder">
+                        <mat-icon class="text-pink-500" matSuffix>keyboard_arrow_down</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-full px-3 cursor-pointer shadow-none" color="primary" (click)="openPlanning()">
+                        <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/calendar.svg" alt="" class=""></mat-icon>
+                        <mat-label>Choix de votre date</mat-label>
+                        <input matInput type="text" disabled="disabled" placeholder="Placeholder" value="" class="shadow-none">
+                        <mat-icon class="text-pink-500" matSuffix>keyboard_arrow_down</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="">
+                    <button type="submit" class="uppercase h-10 w-36 bg-pink-500 text-white rounded-lg">rechercher</button>
+                </div>
+            </form>
+        </div>
+        <div class="flex flex-col">
+            <div class="flex items-center space-x-2 mb-10">
+                <div class=""><img src="assets/keyOrange.svg" alt="" class=""></div>
+                <div class="">
+                    <div>Paiement en ligne 100% sécurisé. Annulation possible </div>
+                    <div>jusqu’à 48 heures avant le début de la prestation.</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5 md:grid grid-cols-2 gap-10">
+                <div class="relative border-2 p-2 rounded-lg" *ngFor="let item of items">
+                    <div class="grid grid-cols-2">
+                        <div class="relative z-0 -top-7">
+                            <img src="assets/image1.svg" alt="" class="">
+                        </div>
+                        <div class="space-y-5">
+                            <div class="flex justify-between items-center">
+                                <div class="uppercase font-medium text-black">sarah</div>
+                                <div class="bg-yellow-400 p-1 rounded-lg">40 €</div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="">
+                                        <img src="assets/position.svg" alt="" class="">
+                                    </div>
+                                    <div class="">Nantes</div>
+                                </div>
+                                <div class="">
+                                    <img src="assets/carte.svg" alt="" class="">
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="">7 avis (5/5)</div>
+                                <div class="">
+                                    <img src="assets/espece.svg" alt="" class="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="" routerLink="/details">
+                            <button class="bg-pink-500 text-white h-10 w-36 rounded-lg uppercase cursor-pointer">voir profil</button>
+                        </div>
+                        <div class="">
+                            <button class="text-pink-500 bg-white h-10 w-36 rounded-lg uppercase cursor-pointer border-2 border-pink-500">ontactez-la</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

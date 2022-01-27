@@ -1,0 +1,236 @@
+<app-header></app-header>
+<div class="px- md:px-0 text-gray-600">
+    <div class="flex flex-col items-center md:flex-row md:justify-between md:px-10 mb-10 md:mb-0">
+        <div class="flex flex-col md:flex-row justify-between -space-x-32">
+            <div class="text-pink-500 text-lg hidden md:block mt-20">
+                <div class=""><span class="font-medium">Decouvrez</span> et <span class="font-medium">reservez</span> la coiffeuse</div>
+                <div class="">qui vous correspond, en quelques clics !</div>
+            </div>
+            <div class="pl-28 md:p-0">
+                <img src="assets/bgImgCliente.svg" alt="" class="">
+            </div>
+        </div>
+        <div class="">
+            <form class="bg-pink-500 px-3 py-2 h-96 w-80 md:w-96">
+                <div class="bg-white rounded-md h-5/6">
+                    <mat-tab-group mat-align-tabs="" class="" color="primary">
+                        <mat-tab class="">
+                            <ng-template mat-tab-label>Je reserve ma coiffeuse</ng-template>
+                            <div class="flex flex-col">
+                                <mat-form-field appearance="outline" class="w-full px-3 cursor-pointer" color="primary" (click)="openVille()">
+                                    <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/position.svg" alt="" class=""></mat-icon>
+                                    <mat-label>Choix de la ville</mat-label>
+                                    <input matInput type="text" disabled="disabled" value={{ville}} placeholder="Placeholder">
+                                    <mat-icon class="text-pink-500" matSuffix>keyboard_arrow_down</mat-icon>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline" class="w-full px-3 cursor-pointer" color="primary" (click)="openPrestation()">
+                                    <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/outils.svg" alt="" class=""></mat-icon>
+                                    <mat-label>Type de prestation</mat-label>
+                                    <input matInput type="text" disabled="disabled" value={{prestation}} placeholder="Placeholder">
+                                    <mat-icon class="text-pink-500" matSuffix>keyboard_arrow_down</mat-icon>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline" class="w-full px-3 cursor-pointer shadow-none" color="primary" (click)="openPlanning()">
+                                    <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/calendar.svg" alt="" class=""></mat-icon>
+                                    <mat-label>Choix de votre date</mat-label>
+                                    <input matInput type="text" disabled="disabled" value={{planning}} placeholder="Placeholder" value="" class="shadow-none">
+                                    <mat-icon class="text-pink-500" matSuffix>keyboard_arrow_down</mat-icon>
+                                </mat-form-field>
+                            </div>
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>Je découvre les coiffures</ng-template>
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+                <div class="flex justify-center my-5">
+                    <button type="submit" class="uppercase bg-white text-pink-500 w-72 rounded-lg h-10" routerLink="/resultats">recherche</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="bg-pink-500 flex flex-col items-center space-y-5">
+        <div class="text-white text-center text-xl font-medium pt-2">De nombreuses clientes nous rejoignent !</div>
+        <div class="w-72 px-p md:w-full md:px-32">
+            <ngx-slick-carousel class="m-0 w-full" 
+                    #slickModal="slick-carousel" 
+                    [config]="slideConfig" 
+                    (init)="slickInit($event)"
+                    (breakpoint)="breakpoint($event)"
+                    (afterChange)="afterChange($event)"
+                    (beforeChange)="beforeChange($event)"
+            >
+                <div ngxSlickItem *ngFor="let slide of slides" class="w-full px-2 md:px-10 m-0">
+                    <div class="bg-white rounded-lg w-72 p-2 space-y-5 m-0 w-ful">
+                        <div class="grid grid-cols-2 -space-x-5">
+                            <div class=""><img src="assets/photo1.svg" alt="" class=""></div>
+                            <div class="">
+                                <div>très gentille,</div>
+                                <div>travail professionnel</div>
+                                <div>assurée, ponctuelle... </div>
+                                <div>j’ai vraiment appréciée</div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2">
+                            <div class="">
+                                <div class="font-medium text-black">Nadia</div>
+                                <div class=""></div>
+                            </div>
+                            <div class="text-sm">10 Sptembre 2020</div>
+                        </div> 
+                    </div>           
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+    <div class="flex flex-col items-center space-y-5 relative mt-10">
+        <div class="text-pink-500 text-xl font-medium">Comment ça marche ?</div>
+        <div class="hidden md:block relative top-11 z-0 px-32">
+            <img src="assets/line.svg" alt="" class="">
+        </div>
+        <div class="flex flex-col items-center space-y-5 md:space-y-0 md:items-start md:flex-row md:px-32 md:space-x-32 md:relative">
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/1.svg" alt="" class="">
+                </div>
+                <div class="font-medium text-black text-lg">Réservez</div>
+                <div class="text-center">
+                    <div>Je souhaite me faire coiffer,</div>
+                    <div>je choisis ma prestation et le jour</div>
+                    <div>où je souhaite me faire coiffer.</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/2.svg" alt="" class="">
+                </div>
+                <div class="font-medium text-black text-lg">Sélectionnez</div>
+                <div class="text-center">
+                    <div>Je choisis parmi de nombreuses</div>
+                    <div>coiffeseuses qualifiées et expérimentées.</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/3.svg" alt="" class="">
+                </div>
+                <div class="font-medium text-black text-lg">Validez</div>
+                <div class="text-center">
+                    <div>Je valide ma prestation en payant</div>
+                    <div>directement sur la plateforme.</div>
+                    <div>mon rendez-vous est confirmé.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="md:hidden mt-5 border-t-8 border-pink-500"></div>
+    <div class="flex flex-col items-center space-y-5 mt-5 mb-10">
+        <div class="text-pink-500 text-xl font-medium">tu es coiffeuse ?</div>
+        <div class="flex flex-col items-center space-y-5 md:space-y-0 md:items-start md:flex-row md:px-32 md:space-x-32">
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/coiffes.svg" alt="" class="">
+                </div>
+                <div class="font-medium text-black text-lg">Coiffes selon tes disponibilités</div>
+                <div class="text-center">
+                    <div>tu gères ton planning et tes rendez-vous</div>
+                    <div>depuis ton profil en toute indépendance</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/argents.svg" alt="" class="">
+                </div>
+                <div class="font-medium text-black text-lg">Gagnes de l’argent</div>
+                <div class="text-center">
+                    <div>Tu coiffes à domicile et gagnes</div>
+                    <div>un complément de revenu ou transformes</div>
+                    <div class=""> ta passion de coiffeuse en activité principale.</div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-5">
+                <div class="">
+                    <img src="assets/revenus.svg" alt="" class="">
+                </div>
+                <div class="font-medium text-black text-lg">Revenus assurés</div>
+                <div class="text-center">
+                    <div>Tu fixes toi-même tes tarifs à l’avance </div>
+                    <div>et perçois la totalité du règlement de</div>
+                    <div>tes prestations.</div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <button class="bg-pink-500 h-10 w-64 text-white uppercase rounded-lg">Devenir coiffeuse</button>
+        </div>
+    </div>
+    <div class="border-t-8 border-pink-500"></div>
+    <div class="flex flex-col items-center space-y-5 my-5">
+        <div class="text-pink-500 text-xl font-medium text-center">Déjà présent dans de nombreuses villes,... et bientôt près de chez vous</div>
+        <div class="w-80 md:w-full m-0">
+            <ngx-slick-carousel class="m-0" 
+                                    #slickModal="slick-carousel" 
+                                    [config]="slideConfigVille" 
+                                    (init)="slickInit($event)"
+                                    (breakpoint)="breakpoint($event)"
+                                    (afterChange)="afterChange($event)"
+                                    (beforeChange)="beforeChange($event)">
+                    <div ngxSlickItem *ngFor="let slide of villeSlide" class="relative m-0 md:px-12 element">
+                        <div class="border-2 p-1 w-44 rounded-lg space-y-5">
+                            <div class=""><img src="{{ slide.img }}" alt="" class="w-"></div>
+                            <div class="text-center">{{slide.description}}</div>
+                        </div>
+                        <div class="absolute top-20 left-2 md:left-12 px-5">
+                            <button class="hidden bg-white text-pink-500 h-8 border-2 border-pink-500 rounded-lg w-32 hover:block">reserver</button>
+                        </div>
+                    </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+    <div class="border-t-8 border-pink-500"></div>
+    <div class="flex flex-col items-center space-y-5 md:space-y-0 md:grid grid-cols-2 my-10 px-2">
+        <div class="flex flex-col items-center space-y-5">
+            <div class="text-pink-500 text-xl">
+                <div class="">Découvrez un ensemble de </div>
+                <div class="">conseils pour la coiffure </div>
+                <div class="">et l’entretien des cheveux</div>
+                <div class="">bouclés, frisés et crépus.</div>
+            </div>
+            <div class="">
+                <button class="bg-pink-500 h-10 w-44 uppercase rounded-lg text-white">découvrir</button>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="px-5"><img src="assets/bgImgCliente2.svg" alt="" class=""></div>
+            <div class="flex -space-x-2 items-center md:absolute px-5 md:px-0 top-0 right-0 md:transform-gpu md:rotate-12">
+                <div class="bg-pink-500 text-white px-3 w-80">
+                    <div class="">Téléchargez gratuitement </div>
+                    <div class="">notre guide des coiffures pour les BFC</div>
+                </div>
+                <div class="rounded-full bg-white shadow-2xl shadow-gray-500 p-2 w-14 h-14">
+                    <img src="assets/secheCheveux.svg" alt="" class="w-">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-t-8 border-pink-500"></div>
+    <div class="-space-y-24 md:-space-y-32 md:px-20 mt-10">
+        <div class="text-center space-y-5">
+            <div class="text-pink-500 text-xl">
+                <div class="">Un besoin de soins capillaires</div>
+                <div class="">ou de mèches à tresser ?</div>
+                <div class="">Découvrez le top des soins Pour</div>
+                <div class="">cheveux  crépus, frisés et bouclés.</div>
+            </div>
+            <div class="flex justify-end md:justify-center pr-3">
+                <button class="text-white bg-pink-500 h-10 w-56 rounded-lg uppercase mt-10 md:m-0">découvrir bigooshop</button>
+            </div>
+        </div>
+        <div class="hidden md:block"><img src="assets/bigoodeeShop.svg" alt="" class=""></div>
+        <div class="md:hidden"><img src="assets/bigooShop.svg" alt="" class=""></div>
+    </div>
+</div>
+<app-footer></app-footer>

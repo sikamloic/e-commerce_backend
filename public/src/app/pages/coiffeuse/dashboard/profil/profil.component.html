@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="md:flex justify-between w-full md:px-32">
+    <div class="hidden md:block"><app-dashboard-coiffeuse></app-dashboard-coiffeuse></div>
+    <div class="flex justify-center">
+        <div class="flex flex-col items-center shadox-xl">
+            <div class="text-pink-500 text-2xl">Mes informations</div>
+            <div class="md:flex md:space-x-5">
+                <div class="space-y-5">
+                    <div class="border-dashed border-2 border-pink-500 p-2">
+                        <img src="assets/photo_profil.svg" alt="" class="">
+                    </div>
+                    <div class="flex justify-center bg-pink-500 bg-opacity-30 rounded-lg">
+                        <input type="file" name="" id="photo" class="hidden">
+                        <label for="photo" class="text-2xl text-center text-pink-500 uppercase">changer photo</label>
+                    </div>
+                </div>
+                <div class="">
+                    <form [formGroup]="updateRegister">
+                        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            <mat-form-field  appearance="outline" class="w-full cursor-pointer md:col-span-2" color="primary">
+                                <mat-label>*Email</mat-label>
+                                <input matInput type="email" placeholder="Placeholder" formControlName="email">
+                            </mat-form-field>
+                            <mat-form-field   appearance="outline" class="w-full cursor-pointer" color="primary">
+                                <mat-label>Ville</mat-label>
+                                <input matInput type="text" placeholder="Placeholder" formControlName="ville">
+                            </mat-form-field>
+                            <mat-form-field   appearance="outline" class="w-full cursor-pointer" color="primary">
+                                <mat-label>Code postal</mat-label>
+                                <input matInput  type="text" placeholder="Placeholder" formControlName="postal">
+                            </mat-form-field>
+                            <mat-form-field   appearance="outline" class="w-full cursor-pointer" color="primary">
+                                <mat-label>Adresse</mat-label>
+                                <input matInput type="email" placeholder="Placeholder" formControlName="adresse">
+                            </mat-form-field>
+                            <mat-form-field   appearance="outline" class="w-full cursor-pointer" color="primary">
+                                <mat-label>Téléphone</mat-label>
+                                <input matInput type="tel" placeholder="Placeholder" formControlName="tel">
+                            </mat-form-field>
+                            <mat-form-field   appearance="outline" class="w-full cursor-pointer" color="primary">
+                                <mat-label>Nom</mat-label>
+                                <input matInput type="text" placeholder="Placeholder" formControlName="nom">
+                            </mat-form-field>
+                            <mat-form-field   appearance="outline" class="w-full cursor-pointer" color="primary">
+                                <mat-label>Prénom</mat-label>
+                                <input matInput type="text" placeholder="Placeholder" formControlName="prenom">
+                            </mat-form-field>
+                            <mat-form-field   appearance="outline" class="w-full cursor-pointer col-span-2" color="">
+                                <mat-label>Biographie</mat-label>
+                                <textarea name="" id="" cols="30" rows="2" placeholder="Biographie" formControlName="biographie"></textarea>
+                            </mat-form-field>
+                            <div class="md:col-span-2">
+                                <button type="submit" class="bg-pink-500 uppercase text-white h-10 rounded-lg w-full">mettre à jour</button>
+                            </div>
+                        </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

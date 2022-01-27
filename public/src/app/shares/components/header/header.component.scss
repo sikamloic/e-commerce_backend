@@ -1,0 +1,9 @@
+.s{
+    width: 350px;
+}
+@media screen and (min-width: 600px) {
+    .s{
+        width: 250px !important;
+        
+    }
+}
