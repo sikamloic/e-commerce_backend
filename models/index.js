@@ -6,5 +6,6 @@ db.mongoose = mongoose;
 db.user = require('./utilisateur')
 db.galerie = require('./galerie')
 db.prestation = require('./prestation')
+db.planning = require('./planning')
 
 module.exports = db;

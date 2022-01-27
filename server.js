@@ -21,6 +21,7 @@ db.mongoose
 const authRoute = require('./routes/userRoute');
 const galerieRoute = require('./routes/galerieRoute');
 const prestationRoute =require('./routes/prestationRoute')
+const planningRoute = require('./routes/planningRoute')
 const { json } = require('body-parser');
 
 app.use((req, res, next) => {
@@ -40,6 +41,7 @@ app.use(express.json())
 app.use('/api', authRoute);
 app.use('/api', galerieRoute);
 app.use('/api', prestationRoute);
+app.use('/api', planningRoute);
 
 app.get("/", (req, res) => {
     res.json({ message: "bienvenue sur le serveur" });
