@@ -5,7 +5,7 @@ var app = express();
 const db = require('./models');
 const controller = require('./controllers/userController')
 
-app.use(express.static(__dirname + 'public'));
+app.use(express.static(__dirname + 'pu'));
 
 db.mongoose
   .connect(dbConfig.URL, {
@@ -50,7 +50,7 @@ app.use('/api', planningRoute);
 // });
 
 app.get('*', (req, res) =>{
-  res.sendFile(path.join(__dirname + 'public/index.html'));
+  res.sendFile(path.join(__dirname + 'pu/index.html'));
 })
 
 const PORT = process.env.PORT || 3000;
