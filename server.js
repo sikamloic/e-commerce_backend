@@ -45,12 +45,12 @@ app.use('/api', galerieRoute);
 app.use('/api', prestationRoute);
 app.use('/api', planningRoute);
 
-app.get("/", (req, res) => {
-    res.json({ message: "bienvenue sur le serveur" });
-});
+// app.get("/", (req, res) => {
+//     res.json({ message: "bienvenue sur le serveur" });
+// });
 
 app.get('*', (req, res) =>{
-  res.sendFile(path.join(__dirname + '/public/src/index.html'));
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 })
 
 const PORT = process.env.PORT || 3000;
