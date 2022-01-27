@@ -5,6 +5,12 @@ var app = express();
 const db = require('./models');
 const controller = require('./controllers/userController')
 
+app.use(express.static(__dirname + '/dist'));
+
+app.get('/*', (req, res) =>{
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
+})
+
 db.mongoose
   .connect(dbConfig.URL, {
     useNewUrlParser: true,
