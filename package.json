@@ -28,7 +28,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.4",
     "nodemon": "^2.0.15",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "@angular/cli": "~12.2.6"
   },
   "engines": {
     "node": "17.4.0",

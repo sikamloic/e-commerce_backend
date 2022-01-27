@@ -7,10 +7,6 @@ const controller = require('./controllers/userController')
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('*', (req, res) =>{
-  res.sendFile(path.join(__dirname + '/public/src/index.html'));
-})
-
 db.mongoose
   .connect(dbConfig.URL, {
     useNewUrlParser: true,
@@ -52,6 +48,10 @@ app.use('/api', planningRoute);
 app.get("/", (req, res) => {
     res.json({ message: "bienvenue sur le serveur" });
 });
+
+app.get('*', (req, res) =>{
+  res.sendFile(path.join(__dirname + '/public/src/index.html'));
+})
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
