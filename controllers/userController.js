@@ -78,3 +78,7 @@ exports.signIn = (req, res) =>{
   //   })
   // })
 }
+
+exports.getCoiffeuse = (req, res) =>{
+  User.find({})
+}
